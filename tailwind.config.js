@@ -13,6 +13,11 @@ module.exports = {
         primary: "#ffcc00",
         primaryDark: "#A98700",
         muted: "#747474",
+        mutedDark: "#484848",
+      },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        lato: ["Lato", "sans-serif"],
       },
     },
   },
