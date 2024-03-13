@@ -218,11 +218,11 @@ export default function PersonSwitcher() {
   }, []);
 
   useEffect(() => {
-    // Update the current person every 10 seconds
+    // Update the current person every 5 seconds
     const interval = setInterval(() => {
       setCurrentPerson(shuffled[increment]);
       setIncrement((increment) => (increment + 1) % maxIncrement);
-    }, 10000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [increment]);
 
