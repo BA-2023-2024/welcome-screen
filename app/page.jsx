@@ -1,10 +1,15 @@
 "use client";
 
+import AareTemperature from "@/components/AareTemperature";
+import AirTemperature from "@/components/AirTemperature";
+import DanamemePost from "@/components/DanamemePost";
 import DateBirthday from "@/components/DateBirthday";
+import JoinDanameme from "@/components/JoinDanameme";
+import PersonSwitcher from "@/components/PersonSwitcher";
 import Post from "@/components/Post";
 import Time from "@/components/Time";
 import AnimationContext from "@/components/animation/AnimationContext";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 export default function Home() {
   const [animation, setAnimation] = useState(null);
@@ -25,6 +30,13 @@ export default function Home() {
           </div>
           <div>
             <Time />
+            <PersonSwitcher />
+            <AirTemperature />
+            <AareTemperature />
+          </div>
+          <div>
+            <DanamemePost />
+            <JoinDanameme />
           </div>
         </main>
       )}
