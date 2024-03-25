@@ -127,6 +127,7 @@ export default function DanamemePost() {
               </h1>
               {post.content ? (
                 <div
+                  className="text-start"
                   dangerouslySetInnerHTML={renderContent(post.content)}
                 ></div>
               ) : (
