@@ -22,9 +22,13 @@ export default function DanamemePost() {
       return;
     }
 
-    console.log(data);
-
     setPost(data[0]);
+  }
+
+  function newPost() {
+    setTimeout(() => {
+      fetchPost();
+    }, 5000);
   }
 
   function calcTimeDifference(date) {
@@ -81,18 +85,23 @@ export default function DanamemePost() {
     .on(
       "postgres_changes",
       { event: "INSERT", schema: "public", table: "post" },
-      fetchPost
+      newPost
+    )
+    .on(
+      "postgres_changes",
+      { event: "DELETE", schema: "public", table: "post" },
+      newPost
     )
     .subscribe();
 
   return (
     post && (
-      <div className="card max-h-[765px]">
+      <div className="card min-h-[775px] max-h-[775px]">
         <div className="flex flex-row justify-start items-center w-full">
           <h1 className="title pt-1.5 mx-auto">Neuster DANAMEME Post</h1>
         </div>
         <hr className="divider" />
-        <div className="w-full flex flex-col justify-center items-center text-center">
+        <div className="w-full flex flex-col justify-center text-center">
           <div className="flex flex-row items-center justify-between w-full">
             <div className="flex items-center">
               <img
@@ -113,7 +122,9 @@ export default function DanamemePost() {
           </div>
           {(post.title || post.content) && (
             <div className="w-full mt-3">
-              <h1 className="title text-2xl font-bold">{post.title}</h1>
+              <h1 className="title text-2xl font-bold text-start">
+                {post.title}
+              </h1>
               {post.content ? (
                 <div
                   dangerouslySetInnerHTML={renderContent(post.content)}
@@ -124,9 +135,9 @@ export default function DanamemePost() {
             </div>
           )}
           {post.asset && (
-            <div className="w-full mt-3">
+            <div className="max-h-[510px] w-auto mt-3">
               <img
-                className="w-full rounded-xl"
+                className="h-full w-auto rounded-xl"
                 src={post.asset}
                 alt={post.title ? post.title : "Post"}
               />
