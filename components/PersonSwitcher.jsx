@@ -218,11 +218,11 @@ export default function PersonSwitcher() {
   }, []);
 
   useEffect(() => {
-    // Update the current person every 5 seconds
+    // Update the current person every 7 seconds
     const interval = setInterval(() => {
       setCurrentPerson(shuffled[increment]);
       setIncrement((increment) => (increment + 1) % maxIncrement);
-    }, 5000);
+    }, 7000);
     return () => clearInterval(interval);
   }, [increment]);
 
@@ -231,11 +231,19 @@ export default function PersonSwitcher() {
       <div className="w-full flex flex-col justify-center items-center text-center">
         {currentPerson && (
           <div className="flex flex-col text-center mx-auto justiyf-center">
-            <div className="aspect-square overflow-hidden w-[27rem] rounded-xl">
-              <img
-                src={`/portraits/${currentPerson.image}`}
-                className="rounded-xl mx-auto -translate-y-20"
-              />
+            <div className="h-[27rem] w-[27rem] object-cover relative">
+              {people.map((person, index) => (
+                <img
+                  key={index}
+                  src={`/portraits/${person.image}`}
+                  alt={person.name}
+                  className={`absolute top-0 left-0 h-[27rem] w-[27rem] rounded-2xl object-cover transition-all duration-500 ease-in-out ${
+                    currentPerson.image === person.image
+                      ? "opacity-100"
+                      : "opacity-0"
+                  }`}
+                />
+              ))}
             </div>
             <h2 className="title mt-4">{currentPerson.name}</h2>
             <p className="text text-primary mt-1">{currentPerson.profession}</p>
