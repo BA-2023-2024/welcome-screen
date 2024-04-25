@@ -10,6 +10,7 @@ export default function Menuplan() {
   }, []);
 
   function fetchMenuplan() {
+    // Fetch the engehalde menuplan using a cors proxy
     fetch(
       "https://justcors.com/l_qz630cg8wmf/https://restaurant-engehalde.sv-restaurant.ch/de/menuplan/"
     )

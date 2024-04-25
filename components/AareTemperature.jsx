@@ -20,6 +20,7 @@ export default function AareTemperature() {
   }, []);
 
   function fetchTemp() {
+    // Fetch the aare temperature from the aareguru api
     fetch("https://aareguru.existenz.ch/v2018/current?city=bern")
       .then((response) => response.json())
       .then((data) => {
