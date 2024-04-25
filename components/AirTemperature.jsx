@@ -10,10 +10,10 @@ export default function AirTemperature() {
   }, []);
 
   useEffect(() => {
-    // Fetch the temperature from the api every 5 seconds
+    // Fetch the temperature from the api every 5 minutes
     const interval = setInterval(() => {
       fetchTemp();
-    }, 60000);
+    }, 300000);
     return () => clearInterval(interval);
   }, []);
 
