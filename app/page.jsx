@@ -19,28 +19,30 @@ export default function Home() {
       <AnimationContext animation={animation} setAnimation={setAnimation} />
       {animation != null && animation}
       <main id="page">
-        <div
-          className={
-            "z-50 transition-all duration-500 " +
-            (animation != null ? "opacity-0" : "opacity-100")
-          }
-        >
-          <div>
-            <h1 className="text-[2.2rem] font-bold text-primary">
-              Willkommen im ICT-Campus
-            </h1>
-            <Time />
-            <Etagenuebersicht />
-            <Empfang />
-          </div>
-          <div>
-            <PersonSwitcher />
-            <AirTemperature />
-            <AareTemperature />
-          </div>
-          <div>
-            <Birthdays />
-            <Menuplan />
+        <div id="background">
+          <div
+            className={
+              "z-50 transition-all duration-500 " +
+              (animation != null ? "opacity-0" : "opacity-100")
+            }
+          >
+            <div>
+              <h1 className="text-[2.2rem] font-bold text-primary">
+                Willkommen im ICT-Campus
+              </h1>
+              <Time />
+              <Etagenuebersicht />
+              <Empfang />
+            </div>
+            <div>
+              <PersonSwitcher />
+              <AirTemperature />
+              <AareTemperature />
+            </div>
+            <div>
+              <Birthdays />
+              <Menuplan />
+            </div>
           </div>
         </div>
       </main>

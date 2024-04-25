@@ -32,13 +32,16 @@ body {
   overflow: hidden;
 }
 
-main#page > div {
+#background {
+  background-color: rgb(9, 9, 9, 0.8);
+  backdrop-filter: blur(20px);
+}
+
+main#page > div > div {
   display: flex;
   justify-content: space-between;
   height: 100vh;
   width: 100%;
-  background-color: rgb(9, 9, 9, 0.8);
-  backdrop-filter: blur(20px);
   padding: 50px 60px;
 }
 
@@ -50,7 +53,7 @@ main#animation {
   height: 100vh;
 }
 
-main#page > div > div {
+main#page > div > div > div {
   display: flex;
   flex-direction: column;
   width: 32.6%;
