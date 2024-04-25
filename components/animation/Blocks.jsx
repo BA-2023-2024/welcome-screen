@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Blocks({ setAnimation }) {
   gsap.registerPlugin(useGSAP);

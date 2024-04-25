@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import TextPlugin from "gsap/TextPlugin";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export default function ICTCampusAnimation({ setAnimation }) {
   gsap.registerPlugin(useGSAP);

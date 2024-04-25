@@ -246,7 +246,7 @@ export default function PersonSwitcher() {
               ))}
             </div>
             <h2 className="title mt-4">{currentPerson.name}</h2>
-            <p className="text text-primary mt-1">{currentPerson.profession}</p>
+            <p className="text mt-1">{currentPerson.profession}</p>
           </div>
         )}
       </div>

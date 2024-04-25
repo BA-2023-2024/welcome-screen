@@ -6,7 +6,7 @@
 
 @layer components {
   .card {
-    @apply bg-background rounded-lg flex flex-col items-start justify-start p-8;
+    @apply bg-background rounded-2xl flex flex-col items-start justify-start p-8;
   }
 
   .title {
@@ -64,4 +64,18 @@ main#page > div {
   padding-top: 100%;
   content: "";
   display: block;
+}
+
+.grid-container {
+  display: grid;
+  /* grid-template-columns: minmax(5.2rem, auto) auto; Adjust as needed */
+  gap: 1rem; /* Adjust as needed */
+}
+
+.title {
+  grid-column: 1;
+}
+
+.text {
+  grid-column: 2;
 }
