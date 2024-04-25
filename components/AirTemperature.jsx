@@ -30,8 +30,8 @@ export default function AirTemperature() {
 
   return (
     <div className="card mt-5 py-[1.35rem]">
-      <div className="flex flex-row justify-start items-center w-[calc(100%-80px)]">
-        <div className="flex flex-col justify-center text-center ms-8">
+      <div className="flex flex-row justify-start items-center w-[calc(100%-85px)]">
+        <div className="flex flex-col justify-center text-center ms-8 ps-1">
           <FontAwesomeIcon
             className="text-primary text-5xl"
             icon={faTemperatureHalf}
