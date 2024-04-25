@@ -1,7 +1,7 @@
 import { faCalendarDays } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Birthdays() {
+export default function Birthdays({ data }) {
   const currentDate = new Date().toLocaleDateString("de-DE", {
     weekday: "long",
     day: "2-digit",
@@ -9,68 +9,42 @@ export default function Birthdays() {
     year: "numeric",
   });
 
-  const birthdays = [
-    {
-      title: "Lucas",
-      date: "26.2",
-    },
-    {
-      title: "Jolin's",
-      date: "30.4",
-    },
-    {
-      title: "Jolin's",
-      date: "30.4",
-    },
-    {
-      title: "Jolin's",
-      date: "30.4",
-    },
-    {
-      title: "Jolin's",
-      date: "30.4",
-    },
-    {
-      title: "Jolin's",
-      date: "30.4",
-    },
-    {
-      title: "Nadine's",
-      date: "25.4",
-    },
-    {
-      title: "Joel's",
-      date: "26.4",
-    },
-  ];
-
   const todayBirthday =
-    birthdays.filter((birthday) => {
+    data.filter((birthday) => {
       const date = new Date();
       const month = date.getMonth() + 1;
       const day = date.getDate();
       const today = day + "." + month;
-      if (today === birthday.date) {
-        return birthday.title;
+      if (today === birthday.birthdate) {
+        return birthday.firstname;
       }
     }) || [];
 
   function buildString(todayBirthday) {
     // Build string for 1 or more birthdays
     if (todayBirthday.length === 1) {
-      return `<span class="text-primary">${todayBirthday[0].title}</span>`;
+      return `<span class="text-primary">${todayBirthday[0].firstname}'${
+        todayBirthday[0].firstname.slice(-1) !== "s" && "s"
+      }</span>`;
     } else {
       let string = "";
       todayBirthday.forEach((birthday, index) => {
         if (index === todayBirthday.length - 1) {
           string +=
-            " und " + `<span class="text-primary">${birthday.title}</span>`;
+            " und " +
+            `<span class="text-primary">${birthday.firstname}'${
+              birthday.firstname.slice(-1) !== "s" ? "s" : ""
+            }</span>`;
         } else {
           if (index === todayBirthday.length - 2) {
-            string += `<span class="text-primary">${birthday.title}</span>`;
+            string += `<span class="text-primary">${birthday.firstname}'${
+              birthday.firstname.slice(-1) !== "s" ? "s" : ""
+            }</span>`;
           } else {
             string +=
-              `<span class="text-primary">${birthday.title}</span>` + ", ";
+              `<span class="text-primary">${birthday.firstname}'${
+                birthday.firstname.slice(-1) !== "s" ? "s" : ""
+              }</span>` + ", ";
           }
         }
       });
@@ -79,31 +53,25 @@ export default function Birthdays() {
   }
 
   function displayBirthdays() {
-    // Only show birthdays that are in the future
-    // Only show maximum of 5 birthdays
     let futureBirthdays = [];
-    birthdays.forEach((birthday) => {
-      if (
-        new Date().getMonth() + 1 === parseInt(birthday.date.split(".")[1]) &&
-        new Date().getDate() < parseInt(birthday.date.split(".")[0])
-      ) {
-        futureBirthdays.push(birthday);
-      }
-    });
-
-    // Sort birthdays by date
-    futureBirthdays.sort((a, b) => {
-      return (
-        parseInt(a.date.split(".")[1]) - parseInt(b.date.split(".")[1]) ||
-        parseInt(a.date.split(".")[0]) - parseInt(b.date.split(".")[0])
-      );
-    });
-
-    if (futureBirthdays.length > 5) {
-      return futureBirthdays.slice(0, 5);
-    } else {
-      return futureBirthdays;
+    // Function goes around the year starting from tomorrow and ending at yesterday and adds all birthdays to the futureBirthdays array
+    for (let i = 1; i < 365; i++) {
+      const date = new Date();
+      date.setDate(date.getDate() + i);
+      const month = date.getMonth() + 1;
+      const day = date.getDate();
+      const tomorrow = day + "." + month;
+      data.forEach((birthday) => {
+        if (tomorrow === birthday.birthdate) {
+          futureBirthdays.push(birthday);
+        }
+      });
     }
+
+    // Only show the next 5 birthdays
+    futureBirthdays = futureBirthdays.slice(0, 5);
+
+    return futureBirthdays;
   }
 
   return (
@@ -137,7 +105,9 @@ export default function Birthdays() {
           {displayBirthdays().map((birthday, index) => (
             <li key={index}>
               <p className="text text-primaryDark font-medium text-xl">
-                {birthday.title} Geburtstag, {birthday.date}
+                {birthday.firstname}'
+                {birthday.firstname.slice(-1) !== "s" ? "s" : ""} Geburtstag,{" "}
+                {birthday.birthdate}
               </p>
             </li>
           ))}

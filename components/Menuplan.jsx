@@ -31,7 +31,7 @@ export default function Menuplan() {
         setMenu(newMenu);
       })
       .catch(function (err) {
-        console.log("Failed to fetch page: ", err);
+        console.error("Failed to fetch page: ", err);
       });
   }
 
