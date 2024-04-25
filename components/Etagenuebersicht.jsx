@@ -13,15 +13,15 @@ export default function Etagenuebersicht() {
       </div>
       <hr className="divider" />
       <div className="grid-container">
-        <div className="title text-primary text-xl">1. OG</div>
+        <div className="title text-primary text-2xl">1. OG</div>
         <div className="text font-medium">Gesprächsräume, Backoffice P114</div>
-        <div className="title text-primary text-xl">EG</div>
+        <div className="title text-primary text-2xl">EG</div>
         <div className="text font-medium">Basisausbildung Informatik</div>
-        <div className="title text-primary text-xl">1. UG</div>
+        <div className="title text-primary text-2xl">1. UG</div>
         <div className="text font-medium">
           Competence Center for Young Professionals PF75
         </div>
-        <div className="title text-primary text-xl">2. UG</div>
+        <div className="title text-primary text-2xl">2. UG</div>
         <div className="text font-medium">VNTR</div>
       </div>
     </div>

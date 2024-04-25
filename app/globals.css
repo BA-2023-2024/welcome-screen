@@ -14,7 +14,7 @@
   }
 
   .text {
-    @apply text-text font-poppins text-xl font-semibold;
+    @apply text-text font-poppins text-2xl font-semibold;
   }
 
   .divider {

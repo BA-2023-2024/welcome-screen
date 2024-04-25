@@ -120,7 +120,7 @@ export default function Birthdays() {
       <hr className="divider" />
       <div className="w-full flex flex-col justify-center items-center text-center">
         {todayBirthday.length > 0 ? (
-          <h2 className="text text-text text-xl font-medium">
+          <h2 className="text text-text text-2xl font-medium">
             Heute ist{" "}
             <span
               dangerouslySetInnerHTML={{ __html: buildString(todayBirthday) }}
@@ -136,7 +136,7 @@ export default function Birthdays() {
         <ul>
           {displayBirthdays().map((birthday, index) => (
             <li key={index}>
-              <p className="text text-primaryDark font-medium">
+              <p className="text text-primaryDark font-medium text-xl">
                 {birthday.title} Geburtstag, {birthday.date}
               </p>
             </li>
