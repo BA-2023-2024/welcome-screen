@@ -36,9 +36,9 @@ export default function AirTemperature() {
             className="text-primary text-5xl"
             icon={faTemperatureHalf}
           />
-          <h1 className="title mt-2 text-2xl">Luft:</h1>
+          <h1 className="title mt-2 text-2xl">Luft</h1>
         </div>
-        <h1 className="title pt-1.5 mx-auto">{temperature}°C</h1>
+        <h1 className="title pt-1.5 mx-auto font-medium">{temperature}°C</h1>
       </div>
     </div>
   );

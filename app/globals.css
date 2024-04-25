@@ -10,11 +10,11 @@
   }
 
   .title {
-    @apply text-2xl font-semibold text-text font-poppins;
+    @apply text-3xl font-semibold text-text font-poppins;
   }
 
   .text {
-    @apply text-text font-poppins text-lg font-semibold;
+    @apply text-text font-poppins text-xl font-semibold;
   }
 
   .divider {
@@ -29,9 +29,10 @@ body {
   background-size: cover;
   font-family: "Poppins", sans-serif;
   color: #ffffff;
+  overflow: hidden;
 }
 
-main#page {
+main#page > div {
   display: flex;
   justify-content: space-between;
   height: 100vh;
@@ -49,10 +50,10 @@ main#animation {
   height: 100vh;
 }
 
-main#page > div {
+main#page > div > div {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 32.6%;
 }
 
 .box {

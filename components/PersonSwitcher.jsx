@@ -59,12 +59,12 @@ export default function PersonSwitcher() {
     },
     {
       name: "Jolin",
-      profession: "Applikationsentwickler",
+      profession: "Applikationsentwicklerin",
       image: "11.jpg",
     },
     {
       name: "Julia",
-      profession: "Applikationsentwickler",
+      profession: "Applikationsentwicklerin",
       image: "12.jpg",
     },
     {
@@ -89,7 +89,7 @@ export default function PersonSwitcher() {
     },
     {
       name: "Linn",
-      profession: "Applikationsentwickler",
+      profession: "Applikationsentwicklerin",
       image: "17.jpg",
     },
     {
@@ -173,13 +173,8 @@ export default function PersonSwitcher() {
       image: "33.jpg",
     },
     {
-      name: "Shijie",
-      profession: "Plattformenwickler",
-      image: "34.jpg",
-    },
-    {
       name: "Simon",
-      profession: "Applikationsentwickler",
+      profession: "Applikationsentwicklerin",
       image: "Image-Simon.png",
     },
     {
@@ -227,17 +222,17 @@ export default function PersonSwitcher() {
   }, [increment]);
 
   return (
-    <div className="card mt-5 pb-6">
-      <div className="w-full flex flex-col justify-center items-center text-center">
+    <div className="card p-0 h-full">
+      <div className="w-full h-full flex flex-col justify-between items-center text-center">
         {currentPerson && (
-          <div className="flex flex-col text-center mx-auto justiyf-center">
-            <div className="h-[27rem] w-[27rem] object-cover relative">
+          <div className="flex flex-col text-center mx-auto justify-center h-full mt-12">
+            <div className="h-[30rem] w-[30rem] object-cover relative">
               {people.map((person, index) => (
                 <img
                   key={index}
                   src={`/portraits/${person.image}`}
                   alt={person.name}
-                  className={`absolute top-0 left-0 h-[27rem] w-[27rem] rounded-2xl object-cover transition-all duration-500 ease-in-out ${
+                  className={`absolute top-0 left-0 h-[30rem] w-[30rem] rounded-2xl object-cover transition-all duration-500 ease-in-out ${
                     currentPerson.image === person.image
                       ? "opacity-100"
                       : "opacity-0"
@@ -245,8 +240,12 @@ export default function PersonSwitcher() {
                 />
               ))}
             </div>
-            <h2 className="title mt-4">{currentPerson.name}</h2>
-            <p className="text mt-1">{currentPerson.profession}</p>
+            <div className="my-auto">
+              <h2 className="title text-primary">{currentPerson.name}</h2>
+              <p className="text mt-1 font-medium">
+                {currentPerson.profession}
+              </p>
+            </div>
           </div>
         )}
       </div>

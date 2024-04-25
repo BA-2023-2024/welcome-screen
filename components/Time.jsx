@@ -22,7 +22,7 @@ export default function Time() {
   }, []);
 
   return (
-    <div className="card py-[1.35rem]">
+    <div className="card mt-5 py-[1.35rem]">
       <div className="flex flex-row justify-start items-center w-[calc(100%-80px)]">
         <FontAwesomeIcon
           className="text-primary text-5xl ms-8"

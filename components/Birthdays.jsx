@@ -19,6 +19,22 @@ export default function Birthdays() {
       date: "30.4",
     },
     {
+      title: "Jolin's",
+      date: "30.4",
+    },
+    {
+      title: "Jolin's",
+      date: "30.4",
+    },
+    {
+      title: "Jolin's",
+      date: "30.4",
+    },
+    {
+      title: "Jolin's",
+      date: "30.4",
+    },
+    {
       title: "Nadine's",
       date: "25.4",
     },
@@ -97,12 +113,14 @@ export default function Birthdays() {
           className="text-primary text-6xl ms-8"
           icon={faCalendarDays}
         />{" "}
-        <h1 className="title pt-1.5 mx-auto">{currentDate}</h1>
+        <h1 className="title pt-1.5 mx-auto">Kalender</h1>
       </div>
+      <hr className="divider" />
+      <h1 className="title text-center w-full text-2xl">{currentDate}</h1>
       <hr className="divider" />
       <div className="w-full flex flex-col justify-center items-center text-center">
         {todayBirthday.length > 0 ? (
-          <h2 className="text text-text text-xl">
+          <h2 className="text text-text text-xl font-medium">
             Heute ist{" "}
             <span
               dangerouslySetInnerHTML={{ __html: buildString(todayBirthday) }}
@@ -118,7 +136,7 @@ export default function Birthdays() {
         <ul>
           {displayBirthdays().map((birthday, index) => (
             <li key={index}>
-              <p className="text text-primaryDark">
+              <p className="text text-primaryDark font-medium">
                 {birthday.title} Geburtstag, {birthday.date}
               </p>
             </li>
