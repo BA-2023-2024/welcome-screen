@@ -174,8 +174,8 @@ export default function PersonSwitcher() {
     },
     {
       name: "Simon",
-      profession: "Applikationsentwicklerin",
-      image: "Image-Simon.png",
+      profession: "Applikationsentwickler",
+      image: "35.jpg",
     },
     {
       name: "Tenzin",
