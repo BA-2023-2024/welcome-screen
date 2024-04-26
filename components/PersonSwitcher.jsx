@@ -36,9 +36,9 @@ export default function PersonSwitcher({ data }) {
               {data.map((person, index) => (
                 <img
                   key={index}
-                  src={`/portraits/${person.firstname}${
-                    person.image_suffix ? "-" + person.image_suffix : ""
-                  }.jpg`}
+                  src={`https://welcomescreen.blob.core.windows.net/images/${
+                    person.firstname
+                  }${person.image_suffix ? "-" + person.image_suffix : ""}.jpg`}
                   alt={person.firstname}
                   className={`absolute top-0 left-0 h-[30rem] w-[30rem] rounded-2xl object-cover transition-all duration-500 ease-in-out ${
                     currentPerson.firstname + currentPerson.image_suffix ===
