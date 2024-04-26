@@ -105,9 +105,10 @@ export default function Birthdays({ data }) {
           {displayBirthdays().map((birthday, index) => (
             <li key={index}>
               <p className="text text-primaryDark font-medium text-xl">
-                {birthday.firstname}'
-                {birthday.firstname.slice(-1) !== "s" ? "s" : ""} Geburtstag,{" "}
-                {birthday.birthdate}
+                {birthday.firstname}&apos;
+                {birthday.firstname.slice(-1) !== "s"
+                  ? "s"
+                  : ""} Geburtstag, {birthday.birthdate}
               </p>
             </li>
           ))}
