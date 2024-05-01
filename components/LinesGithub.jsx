@@ -26,7 +26,7 @@ export default function LinesGithub() {
     try {
       const response = await fetch(`${repo.url}/stats/contributors`, {
         headers: {
-          Authorization: "Bearer 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",
+          Authorization: "Bearer " + process.env.NEXT_PUBLIC_GITHUB_TOKEN,
         },
       });
       const data = await response.json();
@@ -45,7 +45,7 @@ export default function LinesGithub() {
       "https://api.github.com/orgs/BA-2023-2024/repos?type=all",
       {
         headers: {
-          Authorization: "Bearer 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",
+          Authorization: "Bearer " + process.env.NEXT_PUBLIC_GITHUB_TOKEN,
         },
       }
     ).then((response) => response.json());
