@@ -97,34 +97,6 @@ export default function GridBlocks({ setAnimation }) {
             from: "random",
           },
         });
-
-        tl.to(".box", {
-          duration: 3,
-          scale: 1,
-          y: 0,
-          ease: "power1.inOut",
-          stagger: {
-            amount: 1.5,
-            grid: grid,
-            axis: axis,
-            ease: ease,
-            from: "center",
-          },
-        });
-
-        tl.to(".box", {
-          duration: 3,
-          scale: 0,
-          y: 60,
-          ease: "power1.inOut",
-          stagger: {
-            amount: 1.5,
-            grid: grid,
-            axis: axis,
-            ease: ease,
-            from: 27,
-          },
-        });
       }
 
       animateBoxes("center");
@@ -135,13 +107,13 @@ export default function GridBlocks({ setAnimation }) {
   useEffect(() => {
     setTimeout(() => {
       setAnimation(null);
-    }, 18000);
+    }, 9000);
   }, []);
 
   // Animation with fullscreen ICT-Campus text and it looks like a type animation with blinking cursor
   return (
     <div
-      className="h-screen  bg-black flex items-center overflow-visible justify-center"
+      className="h-screen bg-black flex items-center overflow-visible justify-center"
       id="container"
       ref={container}
     ></div>
