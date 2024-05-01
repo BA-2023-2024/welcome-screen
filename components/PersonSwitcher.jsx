@@ -32,7 +32,7 @@ export default function PersonSwitcher({ data }) {
       <div className="w-full h-full flex flex-col justify-between items-center text-center">
         {currentPerson && (
           <div className="flex flex-col text-center mx-auto justify-center h-full mt-12">
-            <div className="h-[30rem] w-[30rem] object-cover relative">
+            <div className="h-[24rem] w-[24rem] object-cover relative">
               {data.map((person, index) => (
                 <img
                   key={index}
@@ -40,7 +40,7 @@ export default function PersonSwitcher({ data }) {
                     person.firstname
                   }${person.image_suffix ? "-" + person.image_suffix : ""}.jpg`}
                   alt={person.firstname}
-                  className={`absolute top-0 left-0 h-[30rem] w-[30rem] rounded-2xl object-cover transition-all duration-500 ease-in-out ${
+                  className={`absolute top-0 left-0 h-[24rem] w-[24rem] rounded-2xl object-cover transition-all duration-500 ease-in-out ${
                     currentPerson.firstname + currentPerson.image_suffix ===
                     person.firstname + person.image_suffix
                       ? "opacity-100"

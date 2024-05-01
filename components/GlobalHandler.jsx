@@ -10,6 +10,7 @@ import Empfang from "@/components/Empfang";
 import Birthdays from "@/components/Birthdays";
 import Menuplan from "@/components/Menuplan";
 import Etagenuebersicht from "@/components/Etagenuebersicht";
+import LinesGithub from "./LinesGithub";
 
 export default function GlobalHandler({ data }) {
   const [animation, setAnimation] = useState(null);
@@ -30,14 +31,19 @@ export default function GlobalHandler({ data }) {
               <h1 className="text-[2.2rem] font-bold text-primary">
                 Willkommen im ICT-Campus
               </h1>
-              <Time />
               <Etagenuebersicht />
               <Empfang />
             </div>
             <div>
               <PersonSwitcher data={data} />
-              <AirTemperature />
-              <AareTemperature />
+              <div className="flex flex-col">
+                <Time />
+                <LinesGithub />
+                <div className="flex flex-row w-full justify-between gap-5">
+                  <AirTemperature />
+                  <AareTemperature />
+                </div>
+              </div>
             </div>
             <div>
               <Birthdays data={data} />

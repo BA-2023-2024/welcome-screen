@@ -22,13 +22,13 @@ export default function Time() {
   }, []);
 
   return (
-    <div className="card mt-5 py-[1.35rem]">
-      <div className="flex flex-row justify-start items-center w-[calc(100%-80px)]">
-        <FontAwesomeIcon
-          className="text-primary text-5xl ms-8"
-          icon={faClock}
-        />{" "}
-        <h1 className="title pt-1.5 mx-auto">{time} Uhr</h1>
+    <div className="card mt-5 py-[2.5rem]">
+      <div className="flex flex-col items-center w-full my-auto relative">
+        <div className="flex flex-col justify-center text-center absolute left-[3.35rem] top-1/2 -translate-y-1/2">
+          <FontAwesomeIcon className="text-primary text-4xl" icon={faClock} />
+          <h1 className="title text-2xl mt-1.5">Zeit</h1>
+        </div>
+        <h1 className="title font-medium text-center">{time} Uhr</h1>
       </div>
     </div>
   );

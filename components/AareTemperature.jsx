@@ -32,13 +32,13 @@ export default function AareTemperature() {
   }
 
   return (
-    <div className="card mt-5 py-[1.35rem]">
-      <div className="flex flex-row justify-start items-center w-[calc(100%-96.275px)]">
-        <div className="flex flex-col justify-center text-center ms-8">
-          <FontAwesomeIcon className="text-primary text-5xl" icon={faWater} />
-          <h1 className="title mt-2 text-2xl">Aare</h1>
+    <div className="card mt-5 py-[1.35rem] w-full">
+      <div className="flex flex-row justify-start items-center w-full my-auto">
+        <div className="flex flex-col justify-center text-center">
+          <FontAwesomeIcon className="text-primary text-4xl" icon={faWater} />
+          <h1 className="title mt-1 text-2xl">Aare</h1>
         </div>
-        <h1 className="title pt-1.5 mx-auto font-medium">{temperature}°C</h1>
+        <h1 className="title ms-12 mx-auto font-medium">{temperature}°C</h1>
       </div>
     </div>
   );
