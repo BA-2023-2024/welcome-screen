@@ -15,3 +15,6 @@ There are 2 necessary parts. The `portraits` directory (located in the `public` 
 **The `portraits` directory**<br/>
 In the portraits directory (located in the `public` folder) are all images stored. The images for each person must have the `firstname`(optional: `-image_suffix`)`.jpg` format. <br/><br/>
 For example: There is only one "Max", meaning the image would be `Max.jpg`. <br/>If there are two Max's one would be `Max.jpg` and the second one would be `Max-1.jpg`
+
+**Env Variables**<br/>
+You need to configure a `NEXT_PUBLIC_GITHUB_TOKEN` variable. You can create a github token under [https://github.com/settings/tokens](https://github.com/settings/tokens). Configure the expiration to "No expiration". Then configure the scope to allow the general `repo` setting. In addition allow under `admin:org` `read:orgRead`.
