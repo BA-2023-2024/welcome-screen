@@ -77,7 +77,7 @@ export default function LinesGithub() {
           <h1 className="title text-2xl mt-1.5">Codezeilen</h1>
         </div>
         <h1 className="title font-medium text-center">
-          +/- {lines.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'")}
+          {lines.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'")}
         </h1>
       </div>
     </div>

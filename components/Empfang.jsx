@@ -14,12 +14,9 @@ export default function Empfang() {
       </div>
       <hr className="divider" />
       <div className="w-full flex flex-col justify-center items-center text-center">
-        <p className="text font-medium">Hast du einen Termin im Campus?</p>
         <p className="text font-medium">
-          Oder bist du auf der Suche nach jemandem?
-        </p>
-        <p className="text font-medium mt-8">
-          Gehe ins 1. UG zum Empfang im CCYP
+          Schön bist du da. Warte im 1. UG beim Empfangsbereich, bis wir dich
+          abholen.
         </p>
       </div>
     </div>

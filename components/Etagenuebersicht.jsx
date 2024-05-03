@@ -12,7 +12,7 @@ export default function Etagenuebersicht() {
         <h1 className="title pt-1.5 mx-auto">Etagenübersicht</h1>
       </div>
       <hr className="divider" />
-      <div className="grid-container">
+      <div className="grid-container my-1">
         <div className="title text-primary text-2xl">1. OG</div>
         <div className="text font-medium">Gesprächsräume, Backoffice P114</div>
         <div className="title text-primary text-2xl">EG</div>
@@ -22,7 +22,7 @@ export default function Etagenuebersicht() {
           Competence Center for Young Professionals PF33
         </div>
         <div className="title text-primary text-2xl">2. UG</div>
-        <div className="text font-medium">VNTR</div>
+        <div className="text font-medium">VNTR, PF 31</div>
       </div>
     </div>
   );

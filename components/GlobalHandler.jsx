@@ -28,9 +28,10 @@ export default function GlobalHandler({ data }) {
             }
           >
             <div>
-              <h1 className="text-[2.2rem] font-bold text-primary">
-                Willkommen im ICT-Campus
+              <h1 className="text-[3rem] font-semibold text-primary leading-10 mt-2">
+                Willkommen im
               </h1>
+              <h1 className="text-[5.4rem] font-bold text-text">ICT-Campus</h1>
               <Etagenuebersicht />
               <Empfang />
             </div>

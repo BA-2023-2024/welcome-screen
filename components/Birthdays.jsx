@@ -69,7 +69,7 @@ export default function Birthdays({ data }) {
     }
 
     // Only show the next 5 birthdays
-    futureBirthdays = futureBirthdays.slice(0, 5);
+    futureBirthdays = futureBirthdays.slice(0, 4);
 
     return futureBirthdays;
   }
@@ -97,7 +97,7 @@ export default function Birthdays({ data }) {
           </h2>
         ) : (
           <h2 className="text text-muted text-lg">
-            Heute hat keiner Geburtstag
+            Heute feiern wir keinen Geburtstag
           </h2>
         )}
         <h2 className="text text-text text-xl mt-4">Nächste Geburstage:</h2>
