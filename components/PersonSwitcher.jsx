@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function PersonSwitcher({ data }) {
   const [increment, setIncrement] = useState(-1);
@@ -49,9 +49,22 @@ export default function PersonSwitcher({ data }) {
                 />
               ))}
             </div>
-            <div className="my-auto">
-              <h2 className="title text-primary">{currentPerson.firstname}</h2>
-              <p className="text mt-1 font-medium">{currentPerson.area}</p>
+            <div className="my-auto relative">
+              {data.map((person, index) => (
+                <div
+                  key={index}
+                  className={
+                    "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ease-in-out " +
+                    (currentPerson.firstname + currentPerson.image_suffix ===
+                    person.firstname + person.image_suffix
+                      ? "opacity-100"
+                      : "opacity-0")
+                  }
+                >
+                  <h2 className="title text-primary">{person.firstname}</h2>
+                  <p className="text mt-1 font-medium">{person.area}</p>
+                </div>
+              ))}
             </div>
           </div>
         )}

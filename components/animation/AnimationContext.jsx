@@ -10,7 +10,6 @@ export default function AnimationContext({ animation, setAnimation }) {
     if (animation != null) return;
 
     // Select a random animation at an interval of 10 seconds
-
     const interval = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * animationChoices.length);
       const selectedAnimation = animationChoices[randomIndex];
