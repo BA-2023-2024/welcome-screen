@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 
 export default function LinesGithub() {
+  const ORG_NAME = "BA-2023-2024";
+
   const [lines, setLines] = useState(0);
 
   useEffect(() => {
@@ -42,7 +44,7 @@ export default function LinesGithub() {
 
   async function getTotalLinesOfCode() {
     const allRepos = await fetch(
-      "https://api.github.com/orgs/BA-2023-2024/repos?type=all",
+      "https://api.github.com/orgs/" + ORG_NAME + "/repos?type=all",
       {
         headers: {
           Authorization: "Bearer " + process.env.NEXT_PUBLIC_GITHUB_TOKEN,
