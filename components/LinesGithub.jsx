@@ -14,30 +14,30 @@ export default function LinesGithub() {
   }, []);
 
   function calculateTotal(x) {
-    let total = 0;
-    x.forEach((contributor) => {
-      contributor.weeks.forEach((week) => {
-        total += week.a - week.d;
-      });
+    let lines = 0;
+    x.forEach((arr) => {
+      lines += arr[1] + arr[2];
     });
 
-    return total;
+    return lines;
   }
 
   async function fetchLinesOfCode(repo) {
     try {
-      const response = await fetch(`${repo.url}/stats/contributors`, {
+      const response = await fetch(`${repo.url}/stats/code_frequency`, {
         headers: {
           Authorization: "Bearer " + process.env.NEXT_PUBLIC_GITHUB_TOKEN,
         },
       });
       const data = await response.json();
       if (Object.keys(data).length === 0 && data.constructor === Object) {
+        console.log(repo.url + " has no data");
         return 0;
       }
 
       return calculateTotal(data);
     } catch (error) {
+      console.log(repo.url + " has no data");
       return 0;
     }
   }
@@ -55,12 +55,9 @@ export default function LinesGithub() {
     const promises = allRepos.map(fetchLinesOfCode);
     const linesOfCodeArray = await Promise.all(promises);
 
-    const totalLinesOfCode = linesOfCodeArray.reduce(
-      (acc, curr) => acc + curr,
-      0
-    );
+    const totalLines = linesOfCodeArray.reduce((a, b) => a + b, 0);
 
-    return totalLinesOfCode;
+    return totalLines;
   }
 
   // Fetch the total lines of code every 5 minutes
